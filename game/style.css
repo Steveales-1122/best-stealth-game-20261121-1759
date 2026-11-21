@@ -1,0 +1,37 @@
+html, body { margin: 0; height: 100%; background: #0b0e16; overflow: hidden; }
+body { font-family: "Segoe UI", system-ui, sans-serif; color: #e8e4d8; }
+#wrap { position: relative; width: 960px; height: 640px; margin: 0 auto; top: 50%; transform: translateY(-50%); }
+#game { display: block; width: 960px; height: 640px; background: #141824; border-radius: 6px; box-shadow: 0 0 0 1px #2c3247, 0 18px 60px rgba(0,0,0,.6); }
+#hud {
+  position: absolute; left: 0; right: 0; top: 0; display: flex; justify-content: space-between;
+  align-items: center; padding: 8px 12px; gap: 12px; pointer-events: none;
+  background: linear-gradient(rgba(5,7,12,.85), rgba(5,7,12,0));
+  font-size: 13px; letter-spacing: .04em; text-shadow: 0 1px 2px #000;
+}
+.hud-left, .hud-mid, .hud-right { display: flex; align-items: center; gap: 10px; }
+#hud-alert-label { font-weight: 700; min-width: 92px; text-align: right; }
+#hud-alert-bar { width: 150px; height: 9px; border: 1px solid #555a6e; border-radius: 5px; background: #10131d; overflow: hidden; }
+#hud-alert-fill { height: 100%; width: 0%; background: #e8c33c; transition: width .12s linear; }
+#hud-sound { pointer-events: auto; background: rgba(20,24,38,.8); color: #e8e4d8; border: 1px solid #555a6e; border-radius: 4px; padding: 3px 8px; cursor: pointer; font-size: 12px; }
+#toast {
+  position: absolute; left: 50%; bottom: 54px; transform: translateX(-50%);
+  background: rgba(8,10,18,.88); border: 1px solid #4a5068; border-radius: 6px;
+  padding: 8px 16px; font-size: 14px; opacity: 0; transition: opacity .25s; pointer-events: none; white-space: nowrap;
+}
+#toast.show { opacity: 1; }
+#overlay {
+  position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; background: rgba(5,7,12,.72); border-radius: 6px; padding: 24px; gap: 10px;
+}
+#overlay.hidden { display: none; }
+#overlay h1 { margin: 0; font-size: 34px; letter-spacing: .06em; color: #f2c94c; text-shadow: 0 2px 12px rgba(242,201,76,.35); }
+#overlay h2 { margin: 0; font-size: 15px; font-weight: 600; color: #b9c0d4; letter-spacing: .12em; text-transform: uppercase; }
+#overlay p { margin: 4px 0; font-size: 14px; line-height: 1.55; max-width: 560px; color: #d8d3c2; }
+#overlay .keys { font-size: 13px; color: #9aa3b8; }
+#overlay .keys b { color: #f2c94c; font-weight: 600; }
+#overlay button {
+  margin-top: 8px; background: #f2c94c; color: #191204; border: 0; border-radius: 6px;
+  padding: 11px 26px; font-size: 16px; font-weight: 700; cursor: pointer; letter-spacing: .03em;
+}
+#overlay button:hover { background: #ffd95e; }
+#status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
